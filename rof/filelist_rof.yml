@@ -1,4 +1,4 @@
-version: 202510226ea63156f9eac482b9276090c8252413
+version: 202511034b6a64cb61584e2302e6e6967b4ef0c2
 downloadprefix: http://projectquarm.com/rof/
 downloads:
 - name: RaceData.txt
