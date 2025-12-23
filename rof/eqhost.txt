@@ -1,0 +1,8 @@
+[Registration Servers]
+{
+"104.131.4.74:6999"
+}
+[Login Servers]
+{
+"104.131.4.74:6000"
+}
