@@ -6,235 +6,235 @@ downloads:
   date: "20251229"
   size: 11352064
 - name: Zeal/uifiles/zeal/EQUI_OptionsWindow.xml
-  md5: 9BCD3FDFE7C1D3DABB202C6D11F3217A
+  md5: aabd89da78f41745fc125bbf1ac1ae5b
   date: "20251222"
   size: 110103
 - name: Zeal/uifiles/zeal/EQUI_Tab_Cam.xml
-  md5: 6A4F22C24705A20CDADAE848B0FF64E6
+  md5: 8838799e8fbc2388ad77f27c45eb269d
   date: "20251222"
   size: 16514
 - name: Zeal/uifiles/zeal/EQUI_Tab_Colors.xml
-  md5: C0172009D8197EF3181B302FAE320D5A
+  md5: ff12d6383c7c847680ff25c539f0444c
   date: "20251222"
   size: 38152
 - name: Zeal/uifiles/zeal/EQUI_Tab_FloatingDamage.xml
-  md5: 294761C672ED655CC6AA8B758E3C8971
+  md5: 586121993d1ba530a4ccfecb8d7fb16e
   date: "20251222"
   size: 12756
 - name: Zeal/uifiles/zeal/EQUI_Tab_General.xml
-  md5: 5DFA4790E1C7F2EE1181E96065ECDB8D
+  md5: 9dbcc8c6e03edd184716a7a36a88bce2
   date: "20251222"
   size: 49940
 - name: Zeal/uifiles/zeal/EQUI_Tab_Map.xml
-  md5: 75CAF477F0618EA664C57A5181AE0CC1
+  md5: b1d9294d557fc774112d96c9c9977c77
   date: "20251222"
   size: 29105
 - name: Zeal/uifiles/zeal/EQUI_Tab_TargetRing.xml
-  md5: 6777306FAE3D4316848D539B0C284058
+  md5: e401e25f78ed2739c22b88659d53698d
   date: "20251222"
   size: 17367
 - name: Zeal/uifiles/zeal/EQUI_ZealButtonWnd.xml
-  md5: 452835D8732592601148E2917C5DFF3B
+  md5: c9b0ee278e1bd33579f028478dca5aa8
   date: "20251222"
   size: 1835
 - name: Zeal/uifiles/zeal/EQUI_ZealInputDialog.xml
-  md5: 380782FBB09871FB26B570A6CADE897B
+  md5: 2a4798ee7a376d842b6d91250ea38cd5
   date: "20251222"
   size: 4562
 - name: Zeal/uifiles/zeal/EQUI_ZealMap.xml
-  md5: 6042877D45F1F62328E6649EFA0772AB
+  md5: e42f24a807ec20f7a6681c6bf99fd256
   date: "20251222"
   size: 836
 - name: Zeal/uifiles/zeal/EQUI_ZealOptions.xml
-  md5: 37AE114DF5D2EF2FD6D1630FA7EBEE81
+  md5: fe6c44651eb6a9351d061eac3ffe933c
   date: "20251228"
   size: 1766
 - name: Zeal/uifiles/zeal/EQUI_ZoneSelect.xml
-  md5: 6526E439DEA5B7E1343B6EE7A08F5995
+  md5: 9915ca7d0de62e204c4b655ac8d8fe56
   date: "20251222"
   size: 3704
 - name: Zeal/uifiles/zeal/big_xml/EQUI_OptionsWindow.xml
-  md5: 9C6C37D16EEBC5397D1A99FA0A22D45F
+  md5: 8485982e000cdadc45c53367bf0ec2ad
   date: "20251222"
   size: 107890
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_Cam.xml
-  md5: 039A5F350F3068D0006660376BA8C323
+  md5: 888dc20a699f6b0520fa1e4b81409483
   date: "20251222"
   size: 16318
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_Colors.xml
-  md5: 365F02794B70A162968597168B870AC8
+  md5: 98573fb16f726862a567e826e08a6c51
   date: "20251222"
   size: 38105
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_FloatingDamage.xml
-  md5: C4D9FDE73136903AE8542CC5F301A50A
+  md5: 0dedc401e74e5239f07a637d63e59ff3
   date: "20251222"
   size: 12651
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_General.xml
-  md5: 8E04D163E9B8E0C1202E92455A419968
+  md5: 8e04d163e9b8e0c1202e92455a419968
   date: "20251222"
   size: 49683
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_Map.xml
-  md5: 1e5c76b36fc05b81be1f6efb1f5007db
+  md5: c81baec86ecec18a3a860be37a6b908c
   date: "20251222"
   size: 28301
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_TargetRing.xml
-  md5: 6777306FAE3D4316848D539B0C284058
+  md5: 0eebcaa6a3fa3a2fcef8cb204bae7c2e
   date: "20251222"
   size: 17238
 - name: Zeal/uifiles/zeal/big_xml/EQUI_ZealButtonWnd.xml
-  md5: 597885898bd1c8c3be7d8aa9fff3a620
+  md5: 5040836b6ea2e685569e186b0ffc6c3a
   date: "20251222"
   size: 1836
 - name: Zeal/uifiles/zeal/big_xml/EQUI_ZealInputDialog.xml
-  md5: d91350916a904b98acfb95542ebe2e6a
+  md5: 084535ead56178b43d65d9d4d4d2ad18
   date: "20251222"
   size: 4569
 - name: Zeal/uifiles/zeal/big_xml/EQUI_ZealMap.xml
-  md5: 231e49cf7932f11f68b3715c38918af8
+  md5: cb3fa4f3694cbf2ce2853ba94a1f2f46
   date: "20251222"
   size: 839
 - name: Zeal/uifiles/zeal/big_xml/EQUI_ZealOptions.xml
-  md5: 384e42dd9ca4e9e27c1627f834a4961f
+  md5: 27e5eeaace075b2201068564ddef11a3
   date: "20251228"
   size: 1767
 - name: Zeal/uifiles/zeal/big_xml/EQUI_ZoneSelect.xml
-  md5: 738c85ee36849496136e3a127ea6b569
+  md5: 9733fd3d8b26d294bb9059e59c12fc67
   date: "20251222"
   size: 3699
 - name: Zeal/uifiles/zeal/big_xml/generate_big_xml.py
-  md5: 206f89cf5d6b968a22d4d0b509c675f8
+  md5: e7425dac2d4f1deb64e2f2124c174350
   date: "20251222"
   size: 3408
 - name: Zeal/uifiles/zeal/fonts/arial_08.spritefont
-  md5: d1ef67684449e178576b626311983ce6
+  md5: a9df54ec8dbbe3fddf599922404d032f
   date: "20251222"
   size: 9224
 - name: Zeal/uifiles/zeal/fonts/arial_09.spritefont
-  md5: e44b9a57a9d20d31dab90716839b72e4
+  md5: 9d2cbaf845738b8e13717d64a2f56f49
   date: "20251222"
   size: 10248
 - name: Zeal/uifiles/zeal/fonts/arial_10.spritefont
-  md5: 0b13f7ffc86c694e7d07016d0ba49b4a
+  md5: f5a715a4ecde2fe46e4e86f87701632d
   date: "20251222"
   size: 11784
 - name: Zeal/uifiles/zeal/fonts/arial_12.spritefont
-  md5: 3061cf8bb6d174a5f412db5b206c3794
+  md5: 60e32ef86de02bbb75e3b32cefaf0f87
   date: "20251222"
   size: 14344
 - name: Zeal/uifiles/zeal/fonts/arial_14.spritefont
-  md5: 3a75d7c8511fe679c69c454908b62812
+  md5: 8bca6c2610bd021e0905b04dae6d8fc6
   date: "20251222"
   size: 21000
 - name: Zeal/uifiles/zeal/fonts/arial_16.spritefont
-  md5: a7bbcad1fa348fc715e4d17b80c2ea71
+  md5: b58f90a0a815fe23ad89a7080f3a24fb
   date: "20251222"
   size: 23048
 - name: Zeal/uifiles/zeal/fonts/arial_20.spritefont
-  md5: 7ce88d89ebcbdd51f386a8a9b540f66a
+  md5: f6267a05137554da7ef8901a553903e7
   date: "20251222"
   size: 35848
 - name: Zeal/uifiles/zeal/fonts/arial_24.spritefont
-  md5: fd4fdeab2716fb254b20ed80e36efa8b
+  md5: 6f0f24330c15d34137147e0e72b969a6
   date: "20251222"
   size: 44040
 - name: Zeal/uifiles/zeal/fonts/arial_28.spritefont
-  md5: a68ef717185218820f5a3397e7d7e38f
+  md5: c8557c11e91c90664ddaa22f7a0d2a5c
   date: "20251222"
   size: 54280
 - name: Zeal/uifiles/zeal/fonts/arial_32.spritefont
-  md5: 995056c73817f1b4280508f9c2183ee5
+  md5: 467deebfccb8ad2a5f733fd3f4dfd0de
   date: "20251222"
   size: 71688
 - name: Zeal/uifiles/zeal/fonts/arial_bold_20.spritefont
-  md5: f464f10a6337a9b65c8493029adc1290
+  md5: 1fccf3af501f6ba6bbb298c82f71216c
   date: "20251222"
   size: 36872
 - name: Zeal/uifiles/zeal/fonts/arial_bold_24.spritefont
-  md5: 81e9cb6e594cd1848f70a02af84ff026
+  md5: 0281bc49d1cdbfdee194eaf3d7b3c52d
   date: "20251222"
   size: 47112
 - name: Zeal/uifiles/zeal/fonts/arial_bold_28.spritefont
-  md5: debe9cf803d8ee1ca5263b89d1b0612e
+  md5: 3ddf353a17684901856422faee596ec7
   date: "20251222"
   size: 61448
 - name: Zeal/uifiles/zeal/fonts/arial_bold_32.spritefont
-  md5: f2a200386fa0c4a76a0d25927029d799
+  md5: 04a5c2cbaed39797cfd2c28bbf7ac5e2
   date: "20251222"
   size: 78856
 - name: Zeal/uifiles/zeal/fonts/arial_bold_36.spritefont
-  md5: cea4433253849e59f4111ad146ee5301
+  md5: b44567e5ef27dceefb6c7d1f682ec435
   date: "20251222"
   size: 97288
 - name: Zeal/uifiles/zeal/fonts/arial_bold_40.spritefont
-  md5: 71774b9eb93e09a1e2c12e32df410c13
+  md5: 3bcb2c8f43ae01a66aeb13c8c412f188
   date: "20251222"
   size: 109576
 - name: Zeal/uifiles/zeal/fonts/copperplate_gothic_24.spritefont
-  md5: 37350cc3b9dfdc99335248793771ab6e
+  md5: 91913b43cfc92c3fa1c5449623aa63e7
   date: "20251222"
   size: 51208
 - name: Zeal/uifiles/zeal/fonts/extra/animematrix_24.spritefont
-  md5: bd98b10845f1788079fb99b9d55a8c01
+  md5: 2f34b5afe9ac85255d905bc06d5731a8
   date: "20251222"
   size: 61448
 - name: Zeal/uifiles/zeal/fonts/extra/calibri_bold_24.spritefont
-  md5: d55144dab0aabdae6e35c91c95c138b5
+  md5: 96e6aa8e32c3087a3f25ea5f417491c2
   date: "20251222"
   size: 37896
 - name: Zeal/uifiles/zeal/fonts/extra/calibri_bold_28.spritefont
-  md5: b241669dfa83b245da4cd67f59b316a0
+  md5: f81334a461153fcdd876ebc903c6fa33
   date: "20251222"
   size: 48136
 - name: Zeal/uifiles/zeal/fonts/extra/dq4_24.spritefont
-  md5: 0f523d0ca5056bc9dbd63c5adc6ae2a3
+  md5: 378cd980003b0f52763934dd7c421ac9
   date: "20251222"
   size: 82952
 - name: Zeal/uifiles/zeal/fonts/extra/felix_24.spritefont
-  md5: db1af49865da4bd83a9604c4511f96f6
+  md5: ebe16baff2e1e29af7d7178b289637d2
   date: "20251222"
   size: 55304
 - name: Zeal/uifiles/zeal/fonts/extra/hightower_24.spritefont
-  md5: b82ba4441b856a1beedb3abb10caae4a
+  md5: 87644d8bd7d6f055f6b674e71d2a1e4c
   date: "20251222"
   size: 40968
 - name: Zeal/uifiles/zeal/fonts/extra/secretofmana_24.spritefont
-  md5: fa599b897dd2b9fdb1295aa1beae3bfa
+  md5: f484cd042987d3dcb7dc087d0f09516c
   date: "20251222"
   size: 46088
 - name: Zeal/uifiles/zeal/fonts/extra/stencil_24.spritefont
-  md5: 550f61636edeb535c830acb302b0f1d8
+  md5: c4df5c55b3221486f7fdf374ddbd4c08
   date: "20251222"
   size: 46088
 - name: Zeal/uifiles/zeal/fonts/extra/wingdings_bold_24.spritefont
-  md5: cccb5afe4a920928851a7dc64eed27f9
+  md5: 389ec4954b80d18cd8e2e378954464be
   date: "20251222"
   size: 76808
 - name: Zeal/uifiles/zeal/fonts/old_english_24.spritefont
-  md5: 2ed7d0dd16f5a5cc4a5e8547dfff0b8e
+  md5: 216855abe50b46bb0a156f0ccaa4d6db
   date: "20251222"
   size: 49160
 - name: Zeal/uifiles/zeal/fonts/segoeui_bold_24.spritefont
-  md5: 88cfb2cf8a0c15ba2c38cc7dc6a685d2
+  md5: 16623871e73f799f9ead3aca31e818ac
   date: "20251222"
   size: 47112
 - name: Zeal/uifiles/zeal/fonts/showcard_gothic_24.spritefont
-  md5: 16325b2fa4847f2203a1f7868fe3556f
+  md5: 3d91a405cef9d3cd1cc2b29ffc8e0b1b
   date: "20251222"
   size: 54280
 - name: Zeal/uifiles/zeal/optional/EQUI_CharacterSelect.xml
-  md5: 89b9df9daf37237c0e72e1676c716670
+  md5: c5090f196b56869efd043b77943a8c15
   date: "20251222"
   size: 17857
 - name: Zeal/uifiles/zeal/optional/EQUI_GuildManagementWnd.xml
-  md5: af66786207db01764a0dd6265425780c
+  md5: 1e36daaa64d52d0a1a7a1ac76856302b
   date: "20251222"
   size: 30286
 - name: Zeal/uifiles/zeal/spell_info/fetch_spell_info.py
-  md5: 66e81a65728e4e456b207e9194345645
+  md5: 1e68a735381f3776311653317bfd07e9
   date: "20251222"
   size: 1506
 - name: Zeal/uifiles/zeal/spell_info/spell_info.txt
-  md5: 09a0d125988b107c8ff2c3889c04044a
+  md5: 9d424cefc30042f04be14ec9171291d0
   date: "20251222"
   size: 816735
 - name: eqgame.dll
