@@ -62,6 +62,7 @@ namespace EQEmu_Patcher
             version = Assembly.GetEntryAssembly().GetName().Version.ToString();
             Console.WriteLine($"Initializing {version}");
             Console.WriteLine($"Current Directory: {Directory.GetCurrentDirectory()}");
+            StatusLibrary.Log($"Initializing {version} in {Directory.GetCurrentDirectory()}");
             cts = new CancellationTokenSource();
 
             serverName = Assembly.GetExecutingAssembly().GetCustomAttribute<ServerName>().Value;
@@ -209,9 +210,11 @@ namespace EQEmu_Patcher
             if (isDirectYaml)
             {
                 webUrl = filelistUrl;
+                StatusLibrary.Log($"Fetching filelist (direct): {webUrl}");
                 response = await DownloadFile(cts, webUrl, "filelist.yml");
                 if (response != "")
                 {
+                    StatusLibrary.Log($"Failed to fetch filelist from {webUrl}: {response}");
                     MessageBox.Show("Failed to fetch filelist from " + webUrl + ": " + response);
                     this.Close();
                     return;
@@ -220,13 +223,16 @@ namespace EQEmu_Patcher
             else
             {
                 webUrl = $"{filelistUrl}{suffix}/filelist_{suffix}.yml";
+                StatusLibrary.Log($"Fetching filelist (suffix): {webUrl}");
                 response = await DownloadFile(cts, webUrl, "filelist.yml");
                 if (response != "")
                 {
                     webUrl = $"{filelistUrl}/filelist_{suffix}.yml";
+                    StatusLibrary.Log($"Retrying filelist (fallback): {webUrl}");
                     response = await DownloadFile(cts, webUrl, "filelist.yml");
                     if (response != "")
                     {
+                        StatusLibrary.Log($"Failed to fetch filelist from {webUrl}: {response}");
                         MessageBox.Show("Failed to fetch filelist from " + webUrl + ": " + response);
                         this.Close();
                         return;

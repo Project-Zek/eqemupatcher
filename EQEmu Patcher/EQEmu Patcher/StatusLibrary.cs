@@ -49,6 +49,12 @@ namespace EQEmu_Patcher
             mux.WaitOne();
             logAddChange?.BeginInvoke(message, null, null);
             mux.ReleaseMutex();
+            try
+            {
+                var path = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\eqemupatcher.log";
+                System.IO.File.AppendAllText(path, message + "\r\n");
+            }
+            catch { }
         }
 
         public static void SubscribeLogAdd(LogAddHandler f)
