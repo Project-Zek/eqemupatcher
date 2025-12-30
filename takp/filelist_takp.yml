@@ -1,5 +1,5 @@
 version: 202512305465828f14c8809e0225a5733e9be4b7
-downloadprefix: https://github.com/Project-Zek/eqemupatcher/tree/13c102eee098f9bb09b7df3bfcb335d0633c448e/takp
+downloadprefix: https://github.com/Project-Zek/eqemupatcher/tree/master/takp
 downloads:
 - name: Zeal/Zeal.asi
   md5: dc031a7ca0393e915f1be2cf59bd5dbb
