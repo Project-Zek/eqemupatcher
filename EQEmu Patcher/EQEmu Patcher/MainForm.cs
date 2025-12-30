@@ -600,6 +600,13 @@ namespace EQEmu_Patcher
                     StatusLibrary.Log($"Failed to download {entry.name} ({generateSize(entry.size)}) from {url}: {resp}");
                     return;
                 }
+                // Verify the downloaded file now matches the expected MD5; if not, warn clearly
+                var downloadedPath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + entry.name.Replace("/", "\\");
+                var newMd5 = UtilityLibrary.GetMD5(downloadedPath).ToUpper();
+                if (newMd5 != entry.md5.ToUpper())
+                {
+                    StatusLibrary.Log($"Warning: downloaded MD5 mismatch for {entry.name}: got {newMd5}, expected {entry.md5}. Check line endings or filelist source.");
+                }
                 StatusLibrary.Log($"{entry.name} ({generateSize(entry.size)})");
 
                 currentBytes += entry.size;
