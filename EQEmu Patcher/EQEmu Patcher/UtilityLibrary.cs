@@ -8,7 +8,6 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Net.Http;
 using System.Threading;
-using YamlDotNet.Core.Tokens;
 using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 

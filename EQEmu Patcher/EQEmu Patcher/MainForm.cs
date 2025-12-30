@@ -30,6 +30,7 @@ namespace EQEmu_Patcher
         bool isLoading;
         bool isAutoPatch = false;
         bool isAutoPlay = false;
+        bool isDirectYaml = false;
         CancellationTokenSource cts;
         System.Diagnostics.Process process;
 
@@ -64,9 +65,6 @@ namespace EQEmu_Patcher
             cts = new CancellationTokenSource();
 
             serverName = Assembly.GetExecutingAssembly().GetCustomAttribute<ServerName>().Value;
-#if (DEBUG)
-            serverName = "EQEMU Patcher";
-#endif
             if (serverName == "") {
                 MessageBox.Show("This patcher was built incorrectly. Please contact the distributor of this and inform them the server name is not provided or screenshot this message.");
                 this.Close();
@@ -74,9 +72,6 @@ namespace EQEmu_Patcher
             }
 
             fileName = Assembly.GetExecutingAssembly().GetCustomAttribute<FileName>().Value;
-#if (DEBUG)
-            fileName = "eqemupatcher";
-#endif
             if (fileName == "")
             {
                 MessageBox.Show("This patcher was built incorrectly. Please contact the distributor of this and inform them the file name is not provided or screenshot this message.");
@@ -85,20 +80,16 @@ namespace EQEmu_Patcher
             }
 
             filelistUrl = Assembly.GetExecutingAssembly().GetCustomAttribute<FileListUrl>().Value;
-#if (DEBUG)
-            filelistUrl = "https://github.com/xackery/eqemupatcher/releases/latest/download";
-#endif
             if (filelistUrl == "") {
                 MessageBox.Show("This patcher was built incorrectly. Please contact the distributor of this and inform them the file list url is not provided or screenshot this message.", serverName);
                 this.Close();
                 return;
             }
-            if (!filelistUrl.EndsWith("/")) filelistUrl += "/";
+            // If a direct YAML URL is provided, don't append suffix; otherwise, ensure trailing slash for suffix-mode
+            isDirectYaml = filelistUrl.EndsWith(".yml", StringComparison.OrdinalIgnoreCase) || filelistUrl.EndsWith(".yaml", StringComparison.OrdinalIgnoreCase);
+            if (!isDirectYaml && !filelistUrl.EndsWith("/")) filelistUrl += "/";
 
             patcherUrl = Assembly.GetExecutingAssembly().GetCustomAttribute<PatcherUrl>().Value;
-#if (DEBUG)
-            patcherUrl = $"https://github.com/xackery/eqemupatcher/releases/latest/download/";
-#endif
             if (patcherUrl == "")
             {
                 MessageBox.Show("This patcher was built incorrectly. Please contact the distributor of this and inform them the patcher url is not provided or screenshot this message.", serverName);
@@ -160,7 +151,8 @@ namespace EQEmu_Patcher
                 isSupported = true;
                 break;
             }
-            if (!isSupported) {
+            // Allow direct-YAML mode to proceed even if the client version is unknown/unsupported
+            if (!isSupported && !isDirectYaml) {
                 MessageBox.Show("The server " + serverName + " does not work with this copy of Everquest (" + currentVersion.ToString().Replace("_", " ") + ")", serverName);
                 this.Close();
                 return;
@@ -207,18 +199,33 @@ namespace EQEmu_Patcher
                 });
             }));
 
-            string webUrl = $"{filelistUrl}{suffix}/filelist_{suffix}.yml";
-
-            string response = await DownloadFile(cts, webUrl, "filelist.yml");
-            if (response != "")
+            string webUrl;
+            string response;
+            if (isDirectYaml)
             {
-                webUrl = $"{filelistUrl}/filelist_{ suffix}.yml";
+                webUrl = filelistUrl;
                 response = await DownloadFile(cts, webUrl, "filelist.yml");
                 if (response != "")
                 {
                     MessageBox.Show("Failed to fetch filelist from " + webUrl + ": " + response);
                     this.Close();
                     return;
+                }
+            }
+            else
+            {
+                webUrl = $"{filelistUrl}{suffix}/filelist_{suffix}.yml";
+                response = await DownloadFile(cts, webUrl, "filelist.yml");
+                if (response != "")
+                {
+                    webUrl = $"{filelistUrl}/filelist_{suffix}.yml";
+                    response = await DownloadFile(cts, webUrl, "filelist.yml");
+                    if (response != "")
+                    {
+                        MessageBox.Show("Failed to fetch filelist from " + webUrl + ": " + response);
+                        this.Close();
+                        return;
+                    }
                 }
             }
 
@@ -329,13 +336,48 @@ namespace EQEmu_Patcher
                         currentVersion = VersionTypes.Unknown;
                         break;
                 }
+
+                // Allow project-specific overrides via assembly attributes if unknown
+                if (currentVersion == VersionTypes.Unknown && !string.IsNullOrEmpty(hash))
+                {
+                    try
+                    {
+                        var asm = Assembly.GetExecutingAssembly();
+                        var knownHashesAttr = asm.GetCustomAttribute<KnownClientHashes>();
+                        var knownVersionAttr = asm.GetCustomAttribute<KnownClientVersion>();
+                        var knownHashes = knownHashesAttr?.Value ?? string.Empty;
+                        if (!string.IsNullOrEmpty(knownHashes))
+                        {
+                            var parts = knownHashes.Replace("\r", "").Split(new[] { ';', '\n', ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                            foreach (var p in parts)
+                            {
+                                if (string.Equals(p.Trim(), hash, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    var verStr = knownVersionAttr?.Value ?? "Rain_Of_Fear_2";
+                                    VersionTypes parsed;
+                                    if (!Enum.TryParse(verStr, true, out parsed))
+                                    {
+                                        parsed = VersionTypes.Rain_Of_Fear_2;
+                                    }
+                                    currentVersion = parsed;
+                                    splashLogo.Image = Properties.Resources.rof;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    catch { }
+                }
                 if (currentVersion == VersionTypes.Unknown)
                 {
-                    if (MessageBox.Show("Unable to recognize the Everquest client in this directory, open a web page to report to devs?", "Visit", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                    if (!isDirectYaml)
                     {
-                        System.Diagnostics.Process.Start("https://github.com/Xackery/eqemupatcher/issues/new?title=A+New+EQClient+Found&body=Hi+I+Found+A+New+Client!+Hash:+" + hash);
+                        if (MessageBox.Show("Unable to recognize the Everquest client in this directory, open a web page to report to devs?", "Visit", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                        {
+                            System.Diagnostics.Process.Start("https://github.com/Project-Zek/eqemupatcher/issues/new?title=A+New+EQClient+Found&body=Hi+I+Found+A+New+Client!+Hash:+" + hash);
+                        }
+                        StatusLibrary.Log($"Unable to recognize the Everquest client in this directory, send to developers: {hash}");
                     }
-                    StatusLibrary.Log($"Unable to recognize the Everquest client in this directory, send to developers: {hash}");
                 }
                 else
                 {

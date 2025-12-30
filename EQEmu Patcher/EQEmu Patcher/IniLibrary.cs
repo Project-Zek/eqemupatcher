@@ -31,24 +31,61 @@ namespace EQEmu_Patcher
 
         public static void Load()
         {
-            try {
-                using (var input = File.OpenText($"{System.IO.Path.GetDirectoryName(Application.ExecutablePath)}\\eqemupatcher.yml"))
+            string path = $"{System.IO.Path.GetDirectoryName(Application.ExecutablePath)}\\eqemupatcher.yml";
+            bool needsReset = false;
+            try
+            {
+                if (!File.Exists(path))
                 {
-                    var deserializerBuilder = new DeserializerBuilder().WithNamingConvention(new CamelCaseNamingConvention());
-
-                    var deserializer = deserializerBuilder.Build();
-
-                    instance = deserializer.Deserialize<IniLibrary>(input);
+                    needsReset = true;
                 }
+                else
+                {
+                    // Read to memory first to avoid locking the file while we decide to rewrite it
+                    string yaml = File.ReadAllText(path);
+                    var deserializer = new DeserializerBuilder()
+                        .WithNamingConvention(new CamelCaseNamingConvention())
+                        .IgnoreUnmatchedProperties()
+                        .Build();
 
-                if (instance == null) {
-                    ResetDefaults();
+                    try
+                    {
+                        instance = deserializer.Deserialize<IniLibrary>(yaml);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Failed parsing config, resetting: {ex.Message}");
+                        needsReset = true;
+                    }
+
+                    if (instance == null)
+                    {
+                        needsReset = true;
+                    }
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine($"Failed loading config: {e.Message}");
+                needsReset = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Unexpected error loading config: {e.Message}");
+                needsReset = true;
+            }
+
+            if (needsReset)
+            {
+                ResetDefaults();
+                try
+                {
                     Save();
                 }
-            } catch (FileNotFoundException e) {
-                Console.WriteLine($"Failed loading config: {e.Message}");
-                ResetDefaults();
-                Save();
+                catch (IOException ioex)
+                {
+                    Console.WriteLine($"Failed to save default config (in use?): {ioex.Message}");
+                }
             }
 
             if (instance.AutoPatch == null) instance.AutoPatch = "false";
