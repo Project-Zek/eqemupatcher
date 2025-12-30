@@ -131,10 +131,6 @@ namespace EQEmu_Patcher
             if (IniLibrary.instance.ClientVersion == VersionTypes.Unknown)
             {
                 detectClientVersion();
-                if (currentVersion == VersionTypes.Unknown)
-                {
-                    this.Close();
-                }
                 IniLibrary.instance.ClientVersion = currentVersion;
                 IniLibrary.Save();
             }
@@ -146,19 +142,7 @@ namespace EQEmu_Patcher
             if (currentVersion == VersionTypes.Secrets_Of_Feydwer) suffix = "sof";
             if (currentVersion == VersionTypes.Rain_Of_Fear || currentVersion == VersionTypes.Rain_Of_Fear_2) suffix = "rof";
 
-            bool isSupported = false;
-            foreach (var ver in supportedClients)
-            {
-                if (ver != currentVersion) continue;
-                isSupported = true;
-                break;
-            }
-            // Allow direct-YAML mode to proceed even if the client version is unknown/unsupported
-            if (!isSupported && !isDirectYaml) {
-                MessageBox.Show("The server " + serverName + " does not work with this copy of Everquest (" + currentVersion.ToString().Replace("_", " ") + ")", serverName);
-                this.Close();
-                return;
-            }
+            // Proceed regardless of client detection; direct YAML mode does not need version gating
 
             var displayClient = Assembly.GetExecutingAssembly().GetCustomAttribute<ClientDisplayName>()?.Value;
             if (string.IsNullOrWhiteSpace(displayClient))
@@ -301,8 +285,8 @@ namespace EQEmu_Patcher
                 var hash = UtilityLibrary.GetEverquestExecutableHash(AppDomain.CurrentDomain.BaseDirectory);
                 if (hash == "")
                 {
-                    MessageBox.Show("Please run this patcher in your Everquest directory.");
-                    this.Close();
+                    // Could not find eqgame.exe; proceed without closing, assume unknown client
+                    currentVersion = VersionTypes.Unknown;
                     return;
                 }
                 switch (hash)
@@ -379,17 +363,7 @@ namespace EQEmu_Patcher
                     }
                     catch { }
                 }
-                if (currentVersion == VersionTypes.Unknown)
-                {
-                    if (!isDirectYaml)
-                    {
-                        if (MessageBox.Show("Unable to recognize the Everquest client in this directory, open a web page to report to devs?", "Visit", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
-                        {
-                            System.Diagnostics.Process.Start("https://github.com/Project-Zek/eqemupatcher/issues/new?title=A+New+EQClient+Found&body=Hi+I+Found+A+New+Client!+Hash:+" + hash);
-                        }
-                        StatusLibrary.Log($"Unable to recognize the Everquest client in this directory, send to developers: {hash}");
-                    }
-                }
+                // Do not block on unknown client; proceed without prompts
                 else
                 {
                     // Prefer custom logo if a display name is configured
