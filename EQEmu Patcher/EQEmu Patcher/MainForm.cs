@@ -59,10 +59,11 @@ namespace EQEmu_Patcher
         private async void MainForm_Load(object sender, EventArgs e)
         {
             isLoading = true;
+            try { this.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath); } catch { }
             version = Assembly.GetEntryAssembly().GetName().Version.ToString();
             Console.WriteLine($"Initializing {version}");
             Console.WriteLine($"Current Directory: {Directory.GetCurrentDirectory()}");
-            StatusLibrary.Log($"Initializing {version} in {Directory.GetCurrentDirectory()}");
+            // Intentionally avoid logging here to keep splash visible during initial load
             cts = new CancellationTokenSource();
 
             serverName = Assembly.GetExecutingAssembly().GetCustomAttribute<ServerName>().Value;
@@ -182,7 +183,8 @@ namespace EQEmu_Patcher
 
             StatusLibrary.SubscribeLogAdd(new StatusLibrary.LogAddHandler((string message) => {
                 Invoke((MethodInvoker)delegate {
-                    if (!txtList.Visible)
+                    // Keep splash visible during initial load; switch to log view after load completes
+                    if (!txtList.Visible && !isLoading)
                     {
                         txtList.Visible = true;
                         splashLogo.Visible = false;
@@ -210,7 +212,7 @@ namespace EQEmu_Patcher
             if (isDirectYaml)
             {
                 webUrl = filelistUrl;
-                StatusLibrary.Log($"Fetching filelist (direct): {webUrl}");
+                // Avoid early logs that would hide splash during initial load
                 response = await DownloadFile(cts, webUrl, "filelist.yml");
                 if (response != "")
                 {
@@ -223,12 +225,12 @@ namespace EQEmu_Patcher
             else
             {
                 webUrl = $"{filelistUrl}{suffix}/filelist_{suffix}.yml";
-                StatusLibrary.Log($"Fetching filelist (suffix): {webUrl}");
+                // Avoid early logs that would hide splash during initial load
                 response = await DownloadFile(cts, webUrl, "filelist.yml");
                 if (response != "")
                 {
                     webUrl = $"{filelistUrl}/filelist_{suffix}.yml";
-                    StatusLibrary.Log($"Retrying filelist (fallback): {webUrl}");
+                    // Avoid early logs that would hide splash during initial load
                     response = await DownloadFile(cts, webUrl, "filelist.yml");
                     if (response != "")
                     {
@@ -286,11 +288,8 @@ namespace EQEmu_Patcher
                 if (isAutoPlay) PlayGame();
             }
             isLoading = false;
-            var path = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\eqemupatcher.png";
-            if (File.Exists(path))
-            {
-                splashLogo.Load(path);
-            }
+            // Always use the bundled project logo as splash image
+            splashLogo.Image = Properties.Resources.project_zek_logo;
             cts.Cancel();
         }
 
@@ -310,21 +309,21 @@ namespace EQEmu_Patcher
                 {
                     case "85218FC053D8B367F2B704BAC5E30ACC":
                         currentVersion = VersionTypes.Secrets_Of_Feydwer;
-                        splashLogo.Image = Properties.Resources.sof;
+                        splashLogo.Image = Properties.Resources.project_zek_logo;
                         break;
                     case "859E89987AA636D36B1007F11C2CD6E0":
                     case "EF07EE6649C9A2BA2EFFC3F346388E1E78B44B48": //one of the torrented uf clients, used by B&R too
                         currentVersion = VersionTypes.Underfoot;
-                        splashLogo.Image = Properties.Resources.underfoot;
+                        splashLogo.Image = Properties.Resources.project_zek_logo;
                         break;
                     case "A9DE1B8CC5C451B32084656FCACF1103": //p99 client
                     case "BB42BC3870F59B6424A56FED3289C6D4": //vanilla titanium
                         currentVersion = VersionTypes.Titanium;
-                        splashLogo.Image = Properties.Resources.titanium;
+                        splashLogo.Image = Properties.Resources.project_zek_logo;
                         break;
                     case "368BB9F425C8A55030A63E606D184445":
                         currentVersion = VersionTypes.Rain_Of_Fear;
-                        splashLogo.Image = Properties.Resources.rof;
+                        splashLogo.Image = Properties.Resources.project_zek_logo;
                         break;
                     case "240C80800112ADA825C146D7349CE85B":
                     case "A057A23F030BAA1C4910323B131407105ACAD14D": //This is a custom ROF2 from a torrent download
@@ -336,12 +335,12 @@ namespace EQEmu_Patcher
                     case "2FD5E6243BCC909D9FD0587A156A1165": //https://github.com/xackery/eqemupatcher/issues/20
                     case "26DC13388395A20B73E1B5A08415B0F8": //Legacy of Norrath Custom RoF2 Client https://github.com/xackery/eqemupatcher/issues/16
                         currentVersion = VersionTypes.Rain_Of_Fear_2;
-                        splashLogo.Image = Properties.Resources.rof;
+                        splashLogo.Image = Properties.Resources.project_zek_logo;
                         break;
                     case "6BFAE252C1A64FE8A3E176CAEE7AAE60": //This is one of the live EQ binaries.
                     case "AD970AD6DB97E5BB21141C205CAD6E68": //2016/08/27
                         currentVersion = VersionTypes.Broken_Mirror;
-                        splashLogo.Image = Properties.Resources.brokenmirror;
+                        splashLogo.Image = Properties.Resources.project_zek_logo;
                         break;
                     default:
                         currentVersion = VersionTypes.Unknown;

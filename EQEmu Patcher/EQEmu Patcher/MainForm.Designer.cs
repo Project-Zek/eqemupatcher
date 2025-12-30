@@ -138,7 +138,7 @@
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.splashLogo);
             this.Controls.Add(this.progressBar);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            // Use the application icon (from csproj ApplicationIcon) by not overriding Form.Icon here
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(305, 371);
             this.Name = "MainForm";

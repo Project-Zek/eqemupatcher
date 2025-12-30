@@ -65,7 +65,7 @@
     <SERVER_NAME>Project-Zek</SERVER_NAME>
     <FILELIST_URL>https://raw.githubusercontent.com/Project-Zek/eqemupatcher/refs/heads/master/takp/filelist_takp.yml</FILELIST_URL>
     <PATCHER_URL>https://github.com/Project-Zek/eqemupatcher/releases/latest/download/</PATCHER_URL>
-    <FILE_NAME>Project-Zek</FILE_NAME>
+    <FILE_NAME>Project-Zek/1.0.0</FILE_NAME>
     <CLIENT_DISPLAY_NAME>TAKP</CLIENT_DISPLAY_NAME>
     <VERSION>1.0.0.0</VERSION>
     <KNOWN_HASHES>B86646F1A48990A9355644B6E146E70C</KNOWN_HASHES>
@@ -212,6 +212,14 @@
         <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
       </AssemblyAttributes>
       <AssemblyAttributes Include="AssemblyVersion">
+        <_Parameter1>$(VERSION)</_Parameter1>
+        <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
+      </AssemblyAttributes>
+      <AssemblyAttributes Include="AssemblyFileVersion">
+        <_Parameter1>$(VERSION)</_Parameter1>
+        <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
+      </AssemblyAttributes>
+      <AssemblyAttributes Include="AssemblyInformationalVersion">
         <_Parameter1>$(VERSION)</_Parameter1>
         <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
       </AssemblyAttributes>
