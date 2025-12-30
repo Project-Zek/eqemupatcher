@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EQEmu_Patcher</RootNamespace>
-    <AssemblyName>eqemupatcher</AssemblyName>
+    <AssemblyName>Project-Zek</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,7 +46,8 @@
     <SERVER_NAME>Project-Zek</SERVER_NAME>
     <FILELIST_URL>https://raw.githubusercontent.com/Project-Zek/eqemupatcher/refs/heads/master/takp/filelist_takp.yml</FILELIST_URL>
     <PATCHER_URL>https://github.com/Project-Zek/eqemupatcher/releases/latest/download/</PATCHER_URL>
-    <FILE_NAME>eqemupatcher</FILE_NAME>
+    <FILE_NAME>Project-Zek</FILE_NAME>
+    <CLIENT_DISPLAY_NAME>TAKP</CLIENT_DISPLAY_NAME>
     <VERSION>1.0.0.0</VERSION>
     <KNOWN_HASHES>B86646F1A48990A9355644B6E146E70C</KNOWN_HASHES>
     <KNOWN_HASH_VERSION>TAKP</KNOWN_HASH_VERSION>
@@ -64,7 +65,8 @@
     <SERVER_NAME>Project-Zek</SERVER_NAME>
     <FILELIST_URL>https://raw.githubusercontent.com/Project-Zek/eqemupatcher/refs/heads/master/takp/filelist_takp.yml</FILELIST_URL>
     <PATCHER_URL>https://github.com/Project-Zek/eqemupatcher/releases/latest/download/</PATCHER_URL>
-    <FILE_NAME>eqemupatcher</FILE_NAME>
+    <FILE_NAME>Project-Zek</FILE_NAME>
+    <CLIENT_DISPLAY_NAME>TAKP</CLIENT_DISPLAY_NAME>
     <VERSION>1.0.0.0</VERSION>
     <KNOWN_HASHES>B86646F1A48990A9355644B6E146E70C</KNOWN_HASHES>
     <KNOWN_HASH_VERSION>TAKP</KNOWN_HASH_VERSION>
@@ -100,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientVersion.cs" />
+    <Compile Include="ClientDisplayName.cs" />
     <Compile Include="KnownClientHashes.cs" />
     <Compile Include="KnownClientVersion.cs" />
     <Compile Include="FileListUrl.cs" />
@@ -150,6 +153,7 @@
     <None Include="FodyWeavers.xml" />
     <Content Include="icon.ico" />
     <None Include="Resources\brokenmirror.png" />
+    <None Include="Resources\project-zek_logo.png" />
     <None Include="Resources\rof.png" />
     <None Include="Resources\sof.png" />
     <None Include="Resources\underfoot.png" />
@@ -193,6 +197,10 @@
       </AssemblyAttributes>
       <AssemblyAttributes Include="EQEmu_Patcher.FileName">
         <_Parameter1>$(FILE_NAME)</_Parameter1>
+        <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
+      </AssemblyAttributes>
+      <AssemblyAttributes Include="EQEmu_Patcher.ClientDisplayName">
+        <_Parameter1>$(CLIENT_DISPLAY_NAME)</_Parameter1>
         <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
       </AssemblyAttributes>
       <AssemblyAttributes Include="EQEmu_Patcher.KnownClientHashes">

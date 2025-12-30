@@ -2,75 +2,75 @@ version: 202512305465828f14c8809e0225a5733e9be4b7
 downloadprefix: https://github.com/Project-Zek/eqemupatcher/tree/master/takp
 downloads:
 - name: Zeal/Zeal.asi
-  md5: dc031a7ca0393e915f1be2cf59bd5dbb
+  md5: AEDD9694820CA80549E365782CCF63F1
   date: "20251229"
   size: 11352064
 - name: Zeal/uifiles/zeal/EQUI_OptionsWindow.xml
-  md5: 32cfa5593d709660dc6aeb7fdadfc6a7
+  md5: 9BCD3FDFE7C1D3DABB202C6D11F3217A
   date: "20251222"
   size: 110103
 - name: Zeal/uifiles/zeal/EQUI_Tab_Cam.xml
-  md5: ac14d79a6db529287306d4aa773e5bd5
+  md5: 6A4F22C24705A20CDADAE848B0FF64E6
   date: "20251222"
   size: 16514
 - name: Zeal/uifiles/zeal/EQUI_Tab_Colors.xml
-  md5: f5738bebd505154bfde25817b4962a6c
+  md5: C0172009D8197EF3181B302FAE320D5A
   date: "20251222"
   size: 38152
 - name: Zeal/uifiles/zeal/EQUI_Tab_FloatingDamage.xml
-  md5: dc03611feca3e47ebdc5538a6e5e048d
+  md5: 294761C672ED655CC6AA8B758E3C8971
   date: "20251222"
   size: 12756
 - name: Zeal/uifiles/zeal/EQUI_Tab_General.xml
-  md5: cc97016720687315c1edb99d181f0b08
+  md5: 5DFA4790E1C7F2EE1181E96065ECDB8D
   date: "20251222"
   size: 49940
 - name: Zeal/uifiles/zeal/EQUI_Tab_Map.xml
-  md5: 085542a22605bd6bf5a0118bfb5ebf15
+  md5: 75CAF477F0618EA664C57A5181AE0CC1
   date: "20251222"
   size: 29105
 - name: Zeal/uifiles/zeal/EQUI_Tab_TargetRing.xml
-  md5: f0a904e77f903a6a4bc9bc8700357c44
+  md5: 6777306FAE3D4316848D539B0C284058
   date: "20251222"
   size: 17367
 - name: Zeal/uifiles/zeal/EQUI_ZealButtonWnd.xml
-  md5: 690335d6a4c7f5780f5d7809beb9cc89
+  md5: 452835D8732592601148E2917C5DFF3B
   date: "20251222"
   size: 1835
 - name: Zeal/uifiles/zeal/EQUI_ZealInputDialog.xml
-  md5: 6a9d09ed4ade19f91519d3092b521a56
+  md5: 380782FBB09871FB26B570A6CADE897B
   date: "20251222"
   size: 4562
 - name: Zeal/uifiles/zeal/EQUI_ZealMap.xml
-  md5: 3f34c5ebd1dfe2e2f042d72311028936
+  md5: 6042877D45F1F62328E6649EFA0772AB
   date: "20251222"
   size: 836
 - name: Zeal/uifiles/zeal/EQUI_ZealOptions.xml
-  md5: f046765dcb11e41dae641a37135b5839
+  md5: 37AE114DF5D2EF2FD6D1630FA7EBEE81
   date: "20251228"
   size: 1766
 - name: Zeal/uifiles/zeal/EQUI_ZoneSelect.xml
-  md5: 79ff93883025e31abad4dcfa215d162e
+  md5: 6526E439DEA5B7E1343B6EE7A08F5995
   date: "20251222"
   size: 3704
 - name: Zeal/uifiles/zeal/big_xml/EQUI_OptionsWindow.xml
-  md5: a8412a88aae92ebfea9dd39c0e356938
+  md5: 9C6C37D16EEBC5397D1A99FA0A22D45F
   date: "20251222"
   size: 107890
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_Cam.xml
-  md5: 239414a819ab7d5698dbabade512e41d
+  md5: 039A5F350F3068D0006660376BA8C323
   date: "20251222"
   size: 16318
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_Colors.xml
-  md5: ed749ecf16474508ff90f82536679d35
+  md5: 365F02794B70A162968597168B870AC8
   date: "20251222"
   size: 38105
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_FloatingDamage.xml
-  md5: fb5085d2e874271fdd7b347d64fbd101
+  md5: C4D9FDE73136903AE8542CC5F301A50A
   date: "20251222"
   size: 12651
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_General.xml
-  md5: 3a7434b5db29f72e0ecb9552251c1bff
+  md5: 8E04D163E9B8E0C1202E92455A419968
   date: "20251222"
   size: 49683
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_Map.xml
@@ -78,7 +78,7 @@ downloads:
   date: "20251222"
   size: 28301
 - name: Zeal/uifiles/zeal/big_xml/EQUI_Tab_TargetRing.xml
-  md5: 532c4c177425df2235990f0e73732bdf
+  md5: 6777306FAE3D4316848D539B0C284058
   date: "20251222"
   size: 17238
 - name: Zeal/uifiles/zeal/big_xml/EQUI_ZealButtonWnd.xml

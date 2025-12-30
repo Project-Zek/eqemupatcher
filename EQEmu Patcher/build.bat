@@ -2,7 +2,7 @@ echo building....
 set VERSION=1.0.0.0
 set BUILD_CONFIGURATION=Release
 set SERVER_NAME=Project-Zek
-set FILE_NAME=eqemupatcher
+set FILE_NAME=Project-Zek
 set FILELIST_URL=https://raw.githubusercontent.com/Project-Zek/eqemupatcher/refs/heads/master/takp/filelist_takp.yml
 set PATCHER_URL=https://github.com/Project-Zek/eqemupatcher/releases/latest/download
 set KNOWN_HASHES=

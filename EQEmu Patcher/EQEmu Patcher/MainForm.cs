@@ -158,7 +158,12 @@ namespace EQEmu_Patcher
                 return;
             }
 
-            this.Text = serverName + " (Client: " + currentVersion.ToString().Replace("_", " ") + ")";
+            var displayClient = Assembly.GetExecutingAssembly().GetCustomAttribute<ClientDisplayName>()?.Value;
+            if (string.IsNullOrWhiteSpace(displayClient))
+            {
+                displayClient = currentVersion.ToString().Replace("_", " ");
+            }
+            this.Text = serverName + " (Client: " + displayClient + ")";
             progressBar.Minimum = 0;
             progressBar.Maximum = 10000;
             progressBar.Value = 0;
@@ -360,7 +365,8 @@ namespace EQEmu_Patcher
                                         parsed = VersionTypes.Rain_Of_Fear_2;
                                     }
                                     currentVersion = parsed;
-                                    splashLogo.Image = Properties.Resources.rof;
+                                    // Prefer custom logo if provided
+                                    splashLogo.Image = Properties.Resources.project_zek_logo;
                                     break;
                                 }
                             }
@@ -381,6 +387,12 @@ namespace EQEmu_Patcher
                 }
                 else
                 {
+                    // Prefer custom logo if a display name is configured
+                    var displayAttr = Assembly.GetExecutingAssembly().GetCustomAttribute<ClientDisplayName>();
+                    if (displayAttr != null)
+                    {
+                        splashLogo.Image = Properties.Resources.project_zek_logo;
+                    }
                     //StatusLibrary.Log($"You seem to have put me in a {clientVersions[currentVersion].FullName} client directory");
                 }
 
@@ -571,6 +583,7 @@ namespace EQEmu_Patcher
                         continue;
                     }
                     Console.WriteLine($"{path} {md5} vs {entry.md5}");
+                    StatusLibrary.Log($"MD5 mismatch: {entry.name} local {md5} vs list {entry.md5}");
                 }
 
 
