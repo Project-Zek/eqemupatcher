@@ -198,4 +198,7 @@ FakesAssemblies/
 eqemupatcher.yml
 eqemupatcher.exe
 SolutionInfo.cs
+ 
+# macOS
+.DS_Store
 lib/
