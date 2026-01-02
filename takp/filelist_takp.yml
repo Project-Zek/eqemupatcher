@@ -254,7 +254,6 @@ downloads:
   date: "20251230"
   size: 1925438
 - name: fix_classic_spell_effects.bat
+  md5: 93c91cc9a2aebdef4acc969348722e00
   date: "20251230"
-  size: 83968
--
- 
+  size: 1859
