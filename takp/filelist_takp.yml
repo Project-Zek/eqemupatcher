@@ -2,8 +2,8 @@ version: 20260104
 downloadprefix: https://raw.githubusercontent.com/Project-Zek/eqemupatcher/refs/heads/master/takp
 downloads:
 - name: Zeal/Zeal.asi
-  md5: EAAA3CB8A9329A29866C941B9C398C92
-  date: "20251229"
+  md5: eaaa3cb8a9329a29866c941b9c398c92
+  date: "20251230"
   size: 11352064
 - name: Zeal/uifiles/zeal/EQUI_OptionsWindow.xml
   md5: 32cfa5593d709660dc6aeb7fdadfc6a7
