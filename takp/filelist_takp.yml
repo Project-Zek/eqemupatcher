@@ -1,4 +1,4 @@
-version: 20260102
+version: 20260103
 downloadprefix: https://raw.githubusercontent.com/Project-Zek/eqemupatcher/refs/heads/master/takp
 downloads:
 - name: Zeal/Zeal.asi
