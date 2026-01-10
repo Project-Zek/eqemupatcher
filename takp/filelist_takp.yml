@@ -246,12 +246,12 @@ downloads:
   date: "20251230"
   size: 93
 - name: eqw.dll
-  md5: 531aca33a0c2e516787477392b771a2f
+  md5: 62e3eee3bcd9b43af4028afcc43610fb8085ef0c
   date: "20251228"
-  size: 83968
+  size: 84480
 - name: spells_en.txt
   md5: cac63b4d562bf29095815ff1288fa45c
-  date: "20251230"
+  date: "20260110"
   size: 1925438
 - name: fix_classic_spell_effects.bat
   md5: 93c91cc9a2aebdef4acc969348722e00
