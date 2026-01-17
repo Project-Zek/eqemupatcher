@@ -240,7 +240,7 @@ downloads:
 - name: eqgame.dll
   md5: d87ae3e426c56b79987cdbf02132a438
   date: "20260117"
-  size: 187392
+  size: 187904
 - name: eqhost.txt
   md5: 130507214cf7b75a77077075621e4cb6
   date: "20251230"
@@ -257,3 +257,11 @@ downloads:
   md5: 93c91cc9a2aebdef4acc969348722e00
   date: "20251230"
   size: 1859
+- name: gequip5.s3d
+  md5: 5fba29a65a5f96e41531e75e1f25097d
+  date: "20260117"
+  size: 2832983
+- name: global6_chr.s3d
+  md5: 4c02aecce4faadaa196b29f3f0839d40
+  date: "20260117"
+  size: 1038457
