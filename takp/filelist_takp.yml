@@ -238,17 +238,17 @@ downloads:
   date: "20251222"
   size: 816735
 - name: eqgame.dll
-  md5: d87ae3e426c56b79987cdbf02132a438
-  date: "20260117"
-  size: 187904
+  md5: 3e49a9e5a9f753de702a81eb451efd1c
+  date: "20260401"
+  size: 188928
 - name: eqhost.txt
-  md5: 130507214cf7b75a77077075621e4cb6
-  date: "20251230"
-  size: 93
+  md5: d15b17d6c840697dd7f10b0a0f5f93e7
+  date: "20260401"
+  size: 113
 - name: eqw.dll
-  md5: 7dbf9c74fff2d875717254d71b40adfb
+  md5: 249b88154091a6017ee688071ecab2a7
   date: "20260110"
-  size: 84480
+  size: 84992
 - name: spells_en.txt
   md5: cac63b4d562bf29095815ff1288fa45c
   date: "20251230"
